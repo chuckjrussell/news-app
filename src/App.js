@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import ArticleList from './ArticleList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Header';
+import SourceSelector from './SourceSelector';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        NEWS!
-      </header>
+    <div>
+
+      <Header/>
 
       <section>
         <ArticleList></ArticleList>

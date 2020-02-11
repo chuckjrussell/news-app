@@ -12,14 +12,13 @@ const ArticleList = () => {
             apiKey: '96e7efbae84544aca2e40f5834bf2777'
         }
       }).then(res => {
-          console.log(res.data.articles);
-          setArticles(res.data.articles)
+          setArticles(res.data.articles);
       })
 
     return (
-        <>
-            {articles.map((a, idx) => <ArticleListItem item={a} key={idx}/>)}
-        </>)
+        <ul class="list-group list-group-flush">
+            {articles.map((a, idx) => <li class="list-group-item" key={idx}><ArticleListItem item={a}/></li>)}
+        </ul>)
 }
 
 export default ArticleList;
