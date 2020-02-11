@@ -1,32 +1,33 @@
 import React from 'react';
 import Select from 'react-select';
-import axios from 'axios';
+import {getSources} from './api';
 import './SourceSelector.css';
 
-const SourceSelector = () => {
+const SourceSelector = ({onSourceChanged}) => {
     const [sources, setSources] = React.useState([]);
     const [selectedOption, setSelectedOption] = React.useState(null);
 
     React.useEffect(() => {
-        axios.get('https://newsapi.org/v2/sources', {
-            params: {
-                apiKey: '96e7efbae84544aca2e40f5834bf2777'
-            }
-          }).then(res => {
+        getSources().then(res => {
               var sources = res.data.sources.map(s => { return {
                 value: s.id, 
                 label: s.name
             }});
-            sources = [ {id: 'all', label: 'All Sources'}, ...sources];
+            sources = [ {value: 'all', label: 'All Sources'}, ...sources];
             setSources(sources);
             setSelectedOption(sources[0]);
         })
     }, [setSources, setSelectedOption]);
 
+    function onSelectionChanged(option){
+        setSelectedOption(option);
+        onSourceChanged(option);
+    }
+
     return (
         <Select
             value={selectedOption}
-            onChange={o => setSelectedOption(o)}
+            onChange={onSelectionChanged}
             options={sources}
             className='source-selector'
         />
