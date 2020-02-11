@@ -1,5 +1,5 @@
 ## View it live!
-Visit the deployed site on netlify!  [https://5e429c56b1d61f01f58317cc--elegant-jang-b445da.netlify.com]/(https://5e429c56b1d61f01f58317cc--elegant-jang-b445da.netlify.com/)
+Visit the deployed site on netlify!  [https://5e429c56b1d61f01f58317cc--elegant-jang-b445da.netlify.com](https://5e429c56b1d61f01f58317cc--elegant-jang-b445da.netlify.com/)
 
 ## Available Scripts
 
